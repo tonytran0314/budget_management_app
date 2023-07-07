@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\budget\BudgetController;
+use App\Http\Controllers\API\V1\budget\BudgetController;
 
 /*
 |--------------------------------------------------------------------------
