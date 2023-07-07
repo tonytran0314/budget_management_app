@@ -17,9 +17,34 @@ class CategorySeeder extends Seeder
     {
 
         $categories = [
-            'Thể loại 1',
-            'Thể loại 2',
-            'Thể loại 3'
+            'Ăn uống',
+            'Xăng',
+            'Tiền lương',
+            'Tiền điện',
+            'Tiền nước',
+            'Internet',
+            'Netflix',
+            'Youtube Premium',
+            'Spotify',
+            'Amazon',
+            'Ăn vặt',
+            'Sửa xe',
+            'Thuốc',
+            'Gửi xe',
+            'Phí cầu đường',
+            'Mỹ phẩm',
+            'Quần áo',
+            'Nội thất',
+            'Phụ kiện thú cưng',
+            'Đồ công nghệ',
+            'Chất tẩy rửa',
+            'Thuế',
+            'Freelance',
+            'Tiền mừng tuổi',
+            'Lương hưu',
+            'Từ thiện',
+            'Tiền phạt',
+            'Đầu tư'
         ];
 
         foreach ($categories as $category) {

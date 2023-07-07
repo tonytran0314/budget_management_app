@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\V1\budget\BudgetController;
+use App\Http\Controllers\API\V1\category\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,7 @@ use App\Http\Controllers\API\V1\budget\BudgetController;
 //     return $request->user();
 // });
 
-Route::resource('budget', BudgetController::class);
+Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\API\V1'], function(){
+    Route::resource('budget', BudgetController::class)->only(['index', 'store', 'show']);
+    Route::resource('category', CategoryController::class);
+});

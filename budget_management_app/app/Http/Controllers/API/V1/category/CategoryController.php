@@ -1,27 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\API\V1\budget;
+namespace App\Http\Controllers\API\V1\category;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\CategoryCollection;
+use App\Http\Resources\V1\CategoryResource;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Http\Requests\BudgetInputValidation;
 
-use App\Models\Budget;
-
-use App\Http\Resources\V1\BudgetResource;
-use App\Http\Resources\V1\BudgetCollection;
-
-class BudgetController extends Controller
+class CategoryController extends Controller
 {
 
-    /********************************************* ONLY INDEX, STORE AND SHOW ************************************* */
+    /********************************************* EDIT, DELETE IS FOR ADMIN ************************************* */
 
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return new BudgetCollection(Budget::paginate());
+        return new CategoryCollection(Category::paginate());
     }
 
     /**
@@ -35,10 +32,9 @@ class BudgetController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(BudgetInputValidation $request)
+    public function store(Request $request)
     {
-        $request->validated($request->all());
-        return new BudgetResource(Budget::create($request->all()));
+        //
     }
 
     /**
@@ -46,7 +42,7 @@ class BudgetController extends Controller
      */
     public function show(string $id)
     {
-        return new BudgetResource(Budget::find($id));
+        return new CategoryResource(Category::find($id));
     }
 
     /**
